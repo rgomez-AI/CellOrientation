@@ -45,7 +45,7 @@ end = "\033[0m"
 
 msg = f"""{green}{bold}Thanks for using CellOrientation and please remember to cite the tool!{end}{end}
     {cyan} Author: Raul Gomez-Riera.
-     GitHub: https://github.com/rgomez-AI/CellOrientation
+        GitHub: https://github.com/rgomez-AI/CellOrientation
     {end}
 """
 
@@ -69,30 +69,41 @@ if sys.argv[4] != "--conda-create-envs-only":
 sep = os.path.sep
 
 localrules:
+    lif2tif,
     split_channels,
     cellprofiler,
     Data_Analysis
     
-    
+
 rule all:
     input:
         "report.html"
 
 
-rule split_channels:
+rule lif2tif:
     input:
-        "scripts" + sep + "lif2tif_split_proj_headless.ijm",
         dirpath,
     params:
-        split="1",	# Split Color (Boolean)
-	proj="ZSTD",	# Stack projection ("ZMAX", "ZAVG", "ZSTD" or "None")
-	flip="0",	    # Flip Vertical (Boolean)
+        bftools="scripts" + sep + "bftools" + sep + "bfconvert",
+    output:
+        directory("TIF_DATASET"),
+    shell:
+        "mkdir TIF_DATASET; ./scripts/lif2tif.sh {params.bftools} {input} {output}"
+
+rule split_channels:
+    input:
+        "scripts" + sep + "split_proj_headless.ijm",
+        "TIF_DATASET",
+    params:
+        split="1",	    # Split Color (Boolean)
+        proj="ZSTD",	# Stack projection ("ZMAX", "ZAVG", "ZSTD" or "None")
+        flip="0",	    # Flip Vertical (Boolean)
     output:
         directory("CP_DATASET"),
     conda:
         "envs" + sep + "fiji.yaml"
     shell:
-        "mkdir CP_DATASET ; ImageJ --update update ; ImageJ -macro {input[0]} {input[1]},{output},{params.split},{params.proj},{params.flip}"
+        "mkdir CP_DATASET; ImageJ -headless -macro {input[0]} {input[1]},{output},{params.split},{params.proj},{params.flip}"
     
 
 rule cellprofiler:

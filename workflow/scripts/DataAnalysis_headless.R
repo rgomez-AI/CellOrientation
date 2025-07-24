@@ -1,24 +1,24 @@
 if (!require("tcltk")) install.packages('tcltk',                                           
-                                     dependencies = TRUE, 
-                                     repos = 'https://cran.r-project.org')
+                                        dependencies = TRUE, 
+                                        repos = 'https://cran.r-project.org')
 if (!require("readr")) install.packages('readr',                                           
-                                     dependencies = TRUE, 
-                                     repos = 'https://cran.r-project.org')
+                                        dependencies = TRUE, 
+                                        repos = 'https://cran.r-project.org')
 if (!require("dplyr")) install.packages('dplyr',                                           
-                                     dependencies = TRUE, 
-                                     repos = 'https://cran.r-project.org')
+                                        dependencies = TRUE, 
+                                        repos = 'https://cran.r-project.org')
 if (!require("tidyr")) install.packages('tidyr',                                           
-                                     dependencies = TRUE, 
-                                     repos = 'https://cran.r-project.org')
+                                        dependencies = TRUE, 
+                                        repos = 'https://cran.r-project.org')
 if (!require("circular")) install.packages('circular',
-                                           dependencies = TRUE, 
-                                           repos = 'https://cran.r-project.org')
+                                             dependencies = TRUE, 
+                                             repos = 'https://cran.r-project.org')
 if (!require("DT")) install.packages('DT',                                           
-                                     dependencies = TRUE, 
-                                     repos = 'https://cran.r-project.org')
-if (!require("scales")) install.packages('scales',
-                                         dependencies = TRUE,
+                                         dependencies = TRUE, 
                                          repos = 'https://cran.r-project.org')
+if (!require("scales")) install.packages('scales',
+                                        dependencies = TRUE,
+                                        repos = 'https://cran.r-project.org')
 
 library(tcltk)
 library(readr)
@@ -79,9 +79,9 @@ summary <- joinNclAndCtr %>%
 # Export the Results as .HTML file
 out <- file.path(dirPathOUT, paste("Summary",".html", sep = ""))
 data_HTML <- datatable(data = summary,
-                       rownames = FALSE,
-                       options = list( columnDefs = list(list(className = 'dt-center',
-                                                              targets = "_all"))))
+                        rownames = FALSE,
+                        options = list( columnDefs = list(list(className = 'dt-center',
+                                                               targets = "_all"))))
 # Save Summary as html file
 saveWidget(widget = data_HTML, 
            file = out, 
