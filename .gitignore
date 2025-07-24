@@ -5,3 +5,4 @@ logs/**
 .snakemake/**
 CP_DATASET/
 CP_OUT/
+TIF_DATASET/
