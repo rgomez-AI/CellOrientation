@@ -121,7 +121,7 @@
                font-weight="normal"
                fill="black"
                id="text8"
-               style="display:inline;fill:#3182bd;fill-opacity:1"
+               style="display:inline;mix-blend-mode:color;fill:#3182bd;fill-opacity:1"
                inkscape:label="lif2tif">lif2tif</text>
             <text
                text-anchor="end"
@@ -131,7 +131,7 @@
                font-weight="normal"
                fill="black"
                id="text9"
-               style="fill:#6baed6;fill-opacity:1">split_channels</text>
+               style="mix-blend-mode:color;fill:#6baed6;fill-opacity:1">split_channels</text>
             <text
                text-anchor="end"
                transform="translate(5,95)"
@@ -140,7 +140,7 @@
                font-weight="normal"
                fill="black"
                id="text10"
-               style="fill:#9ecae1;fill-opacity:1">cellprofiler</text>
+               style="mix-blend-mode:color;fill:#9ecae1;fill-opacity:1">cellprofiler</text>
             <text
                text-anchor="end"
                transform="translate(5,145)"
@@ -150,7 +150,7 @@
                fill="black"
                id="text11"
                inkscape:label="text11"
-               style="fill:#c6dbef;fill-opacity:1">Data_Analysis</text>
+               style="mix-blend-mode:color;fill:#c6dbef;fill-opacity:1">Data_Analysis</text>
           </g>
         </g>
         <path
