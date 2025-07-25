@@ -62,7 +62,7 @@ report: "report/workflow.rst"
 
 dirpath = os.getcwd()
 
-if sys.argv[4] != "--conda-create-envs-only":
+if (len(sys.argv) == 5 and sys.argv[4] != "--conda-create-envs-only"):
     currentDirectory = os.getcwd()
     dirpath = askdirectory(initialdir=currentDirectory, title="Select Images Directory")
 

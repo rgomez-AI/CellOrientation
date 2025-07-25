@@ -1,3 +1,5 @@
+# .gitignore for CellOrientation project
+report.html
 results/**
 resources/**
 logs/**
