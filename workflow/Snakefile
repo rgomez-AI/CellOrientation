@@ -9,7 +9,7 @@
 # >> snakemake --core all --use-conda --conda-create-envs-only Data_Analysis
 #
 # Visualizing the DAG of jobs
-# >> snakemake --dag Data_Analysis | dot -Tpdf > dag.pdf
+# >> snakemake Data_Analysis --dag | dot -Tpdf > dag.pdf
 #
 # Execution of a workflow with snakemake
 # >> snakemake --cores all --use-conda Data_Analysis
